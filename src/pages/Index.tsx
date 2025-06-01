@@ -111,8 +111,8 @@ const Index = () => {
 
         {/* Promotions Section */}
         {promotionProducts.length > 0 && (
-          <section id="promociones" className="py-16 bg-red-50">
-            <div className="container mx-auto px-4">
+          <section id="promociones" className="py-16 ">
+            <div className="container mx-auto px-4 group  hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] bg-white-50 hover:bg-orange-50">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   🔥 OFERTAS ESPECIALES
@@ -122,7 +122,7 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {promotionProducts.slice(0, 6).map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
