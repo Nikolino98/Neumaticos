@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { useCart } from '@/hooks/useCart';
 import { toast } from '@/components/ui/use-toast';
-import { SimpleSlider } from '@/components/simpleslider';
+import { SimpleSlider } from '@/components/SimpleSlider';
 
 interface Product {
   id: string;
