@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import slider1 from "/images/slider1.jpeg"
-import slider2 from '/images/slider3.png'
-import slider3 from '/images/slider2.jpeg'
+import slider1 from "/images/slider1.jpeg";
+import slider2 from '/images/slider3.png';
+import slider3 from '/images/slider2.jpeg';
+import logo from '/images/Logo.png'
 
 const slides = [
   {
@@ -49,29 +50,37 @@ export const HeroSlider = () => {
         <div
           key={slide.id}
           className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
-            index === currentSlide ? 'translate-x-0' : 
-            index < currentSlide ? '-translate-x-full' : 'translate-x-full'
+            index === currentSlide
+              ? "translate-x-0"
+              : index < currentSlide
+              ? "-translate-x-full"
+              : "translate-x-full"
           }`}
         >
-          <div 
+          <div
             className="w-full h-full bg-gradient-to-r from-red-900 to-blue-600 flex items-center"
             style={{
               backgroundImage: `url(${slide.image}`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           >
-            <div className="container mx-auto px-4">
-              <div className="inline-block bg-black/40 text-white p-2 rounded-md backdrop-blur-sm">
-                  <h1 className="text-4xl md:text-6xl font-bold mb-1 animate-fade-in leading-tight">
-                    {slide.title}
-                  </h1>
-                  <p className="text-xl md:text-2xl animate-fade-in-delay leading-snug">
-                    {slide.subtitle}
-                  </p>
-                </div>
+            <div className="container mx-auto px-4 flex justify-center items-center h-screen">
+              <div className="inline-block bg-black/60 text-white p-8 rounded-2xl backdrop-blur-md text-center shadow-2xl space-y-4 max-w-3xl">
+                <h1 className="text-4xl md:text-6xl font-extrabold animate-fade-in leading-tight text-blue-300">
+                  {slide.title}
+                </h1>
+                <p className="text-xl md:text-2xl animate-fade-in-delay leading-snug text-blue-100">
+                  {slide.subtitle}
+                </p>
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="mx-auto w-24 h-auto md:w-32"
+                />
               </div>
+            </div>
           </div>
         </div>
       ))}
@@ -100,7 +109,7 @@ export const HeroSlider = () => {
           <button
             key={index}
             className={`w-3 h-3 rounded-full transition-colors ${
-              index === currentSlide ? 'bg-white' : 'bg-white/50'
+              index === currentSlide ? "bg-white" : "bg-white/50"
             }`}
             onClick={() => setCurrentSlide(index)}
           />
