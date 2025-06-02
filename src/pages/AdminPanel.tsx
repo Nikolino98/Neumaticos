@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -10,7 +11,6 @@ import { Plus, Edit, Trash2, LogOut, Upload, Eye } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Textarea } from '@/components/ui/textarea';
 import { AdminFilter } from '@/components/AdminFilter';
 
 interface Product {
@@ -26,7 +26,6 @@ interface Product {
   image_url?: string;
   is_promotion?: boolean;
   vehicle_type: string;
-  description?: string;
   stock_quantity?: number;
 }
 
@@ -52,7 +51,6 @@ const AdminPanel = () => {
     original_price: '',
     promotion_price: '',
     vehicle_type: 'auto',
-    description: '',
     stock_quantity: '0',
     is_promotion: false
   });
@@ -220,14 +218,13 @@ const AdminPanel = () => {
     const productData = {
       name: formData.name,
       brand: formData.brand,
-      size: formData.size,
-      width: formData.width,
-      profile: formData.profile,
-      diameter: formData.diameter,
+      size: formData.vehicle_type === 'otros' ? (formData.size || 'N/A') : formData.size,
+      width: formData.vehicle_type === 'otros' ? (formData.width || 'N/A') : formData.width,
+      profile: formData.vehicle_type === 'otros' ? (formData.profile || 'N/A') : formData.profile,
+      diameter: formData.vehicle_type === 'otros' ? (formData.diameter || 'N/A') : formData.diameter,
       price: finalPrice,
       original_price: originalPrice,
       vehicle_type: formData.vehicle_type,
-      description: formData.description || null,
       stock_quantity: parseInt(formData.stock_quantity),
       is_promotion: formData.is_promotion,
       image_url: imageUrl
@@ -301,7 +298,6 @@ const AdminPanel = () => {
       original_price: '',
       promotion_price: '',
       vehicle_type: 'auto',
-      description: '',
       stock_quantity: '0',
       is_promotion: false
     });
@@ -330,7 +326,6 @@ const AdminPanel = () => {
       original_price: '',
       promotion_price: promotionPrice,
       vehicle_type: product.vehicle_type,
-      description: product.description || '',
       stock_quantity: product.stock_quantity?.toString() || '0',
       is_promotion: product.is_promotion || false
     });
@@ -436,57 +431,111 @@ const AdminPanel = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="description">Descripción</Label>
-                  <Textarea
-                    id="description"
-                    value={formData.description}
-                    onChange={(e) => setFormData({...formData, description: e.target.value})}
-                    rows={3}
-                  />
+                  <Label htmlFor="vehicle_type">Tipo de Vehículo</Label>
+                  <Select
+                    value={formData.vehicle_type}
+                    onValueChange={(value) => setFormData({...formData, vehicle_type: value})}
+                  >
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="auto">Auto</SelectItem>
+                      <SelectItem value="camioneta">Camioneta</SelectItem>
+                      <SelectItem value="camión">Camión</SelectItem>
+                      <SelectItem value="agro">Agro</SelectItem>
+                      <SelectItem value="otros">Otros</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="width">Ancho</Label>
-                    <Input
-                      id="width"
-                      value={formData.width}
-                      onChange={(e) => setFormData({...formData, width: e.target.value})}
-                      required
-                    />
+                {formData.vehicle_type !== 'otros' && (
+                  <>
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="width">Ancho</Label>
+                        <Input
+                          id="width"
+                          value={formData.width}
+                          onChange={(e) => setFormData({...formData, width: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="profile">Perfil</Label>
+                        <Input
+                          id="profile"
+                          value={formData.profile}
+                          onChange={(e) => setFormData({...formData, profile: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="diameter">Diámetro</Label>
+                        <Input
+                          id="diameter"
+                          value={formData.diameter}
+                          onChange={(e) => setFormData({...formData, diameter: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="size">Medida Completa</Label>
+                        <Input
+                          id="size"
+                          value={formData.size}
+                          onChange={(e) => setFormData({...formData, size: e.target.value})}
+                          placeholder="195/65R15"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {formData.vehicle_type === 'otros' && (
+                  <div className="grid grid-cols-4 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="width">Ancho (opcional)</Label>
+                      <Input
+                        id="width"
+                        value={formData.width}
+                        onChange={(e) => setFormData({...formData, width: e.target.value})}
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="profile">Perfil (opcional)</Label>
+                      <Input
+                        id="profile"
+                        value={formData.profile}
+                        onChange={(e) => setFormData({...formData, profile: e.target.value})}
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="diameter">Diámetro (opcional)</Label>
+                      <Input
+                        id="diameter"
+                        value={formData.diameter}
+                        onChange={(e) => setFormData({...formData, diameter: e.target.value})}
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="size">Medida Completa (opcional)</Label>
+                      <Input
+                        id="size"
+                        value={formData.size}
+                        onChange={(e) => setFormData({...formData, size: e.target.value})}
+                        placeholder="Especificación del producto"
+                      />
+                    </div>
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="profile">Perfil</Label>
-                    <Input
-                      id="profile"
-                      value={formData.profile}
-                      onChange={(e) => setFormData({...formData, profile: e.target.value})}
-                      required
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="diameter">Diámetro</Label>
-                    <Input
-                      id="diameter"
-                      value={formData.diameter}
-                      onChange={(e) => setFormData({...formData, diameter: e.target.value})}
-                      required
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="size">Medida Completa</Label>
-                    <Input
-                      id="size"
-                      value={formData.size}
-                      onChange={(e) => setFormData({...formData, size: e.target.value})}
-                      placeholder="195/65R15"
-                      required
-                    />
-                  </div>
-                </div>
+                )}
 
                 {/* Pricing Section */}
                 <div className="space-y-4 p-4 bg-gray-50 rounded-lg">
@@ -537,36 +586,15 @@ const AdminPanel = () => {
                   )}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="stock_quantity">Stock</Label>
-                    <Input
-                      id="stock_quantity"
-                      type="number"
-                      value={formData.stock_quantity}
-                      onChange={(e) => setFormData({...formData, stock_quantity: e.target.value})}
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="vehicle_type">Tipo de Vehículo</Label>
-                    <Select
-                      value={formData.vehicle_type}
-                      onValueChange={(value) => setFormData({...formData, vehicle_type: value})}
-                    >
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="auto">Auto</SelectItem>
-                        <SelectItem value="camioneta">Camioneta</SelectItem>
-                        <SelectItem value="camión">Camión</SelectItem>
-                        <SelectItem value="agro">Agro</SelectItem>
-                        <SelectItem value="otros">Otros</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                <div className="space-y-2">
+                  <Label htmlFor="stock_quantity">Stock</Label>
+                  <Input
+                    id="stock_quantity"
+                    type="number"
+                    value={formData.stock_quantity}
+                    onChange={(e) => setFormData({...formData, stock_quantity: e.target.value})}
+                    required
+                  />
                 </div>
 
                 <div className="space-y-2">

@@ -1,14 +1,35 @@
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cardellineumaticos.netlify.app/
+
+# Crawl-delay for search engines (optional)
+Crawl-delay: 1
+
+# Block access to admin areas
+User-agent: *
+Disallow: /admin
+Disallow: /api
+Disallow: /private
+
+# Allow specific important pages
 User-agent: Googlebot
 Allow: /
+Allow: /productos
+Allow: /promociones
+Allow: /busqueda
 
 User-agent: Bingbot
 Allow: /
+Allow: /productos
+Allow: /promociones
+Allow: /busqueda
 
-User-agent: Twitterbot
-Allow: /
-
+# Social media crawlers
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: Twitterbot
 Allow: /

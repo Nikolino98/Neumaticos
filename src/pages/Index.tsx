@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { HeroSlider } from "@/components/HeroSlider";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductFilter } from "@/components/ProductFilter";
-// import { BrandSlider } from '@/components/BrandSlider';
+import { SEOHead } from '@/components/SEOHead';
 import { Footer } from "@/components/Footer";
 import { CartProvider } from "@/hooks/useCart";
 import { Button } from "@/components/ui/button";
@@ -100,10 +100,17 @@ const Index = () => {
 
   return (
     <CartProvider>
+       <SEOHead 
+        title="Ruedas al Instante - Neumáticos Online | Mejores Precios y Marcas"
+        description="🚗 Compra neumáticos online con envío gratis. Marcas: Michelin, Bridgestone, Pirelli, Continental. ✅ Ofertas especiales ✅ Garantía ✅ Instalación disponible"
+        keywords="neumáticos baratos, llantas online, Michelin precio, Bridgestone ofertas, neumáticos auto, neumáticos moto, neumáticos camión, comprar ruedas online, neumáticos con instalación"
+        canonical="https://cardellineumaticos.netlify.app/"
+      />
+      
       <div className="min-h-screen bg-gray-50">
         <Header />
-
-        {/* Hero Section */}
+        
+        {/* Hero Section with SEO optimized content */}
         <HeroSlider />
 
         {/* Brand Slider */}
@@ -115,10 +122,10 @@ const Index = () => {
             <div className="container mx-auto px-4 group  hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] bg-white-50 hover:bg-orange-50">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  🔥 OFERTAS ESPECIALES
+                🔥 Ofertas Especiales en Neumáticos
                 </h2>
                 <p className="text-xl text-gray-600">
-                  Aprovecha estos descuentos exclusivos
+                Aprovecha estos descuentos exclusivos en las mejores marcas de neumáticos
                 </p>
               </div>
 
@@ -139,10 +146,10 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Todos los Productos
+              Catálogo Completo de Neumáticos
               </h2>
               <p className="text-xl text-gray-600">
-                Encuentra el neumático perfecto para tu vehículo
+              Encuentra el neumático perfecto para tu vehículo - Auto, Camioneta o Camión
               </p>
             </div>
 
@@ -159,13 +166,11 @@ const Index = () => {
             {loading ? (
               <div className="text-center py-12">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-                <p className="mt-4 text-gray-600">Cargando productos...</p>
+                <p className="mt-4 text-gray-600">Cargando catálogo de neumáticos...</p>
               </div>
             ) : filteredProducts.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-gray-600 text-lg">
-                  No se encontraron productos con los filtros seleccionados.
-                </p>
+                <p className="text-gray-600 text-lg">No se encontraron neumáticos con los filtros seleccionados.</p>
                 <Button
                   variant="outline"
                   onClick={() => {
@@ -174,7 +179,7 @@ const Index = () => {
                   }}
                   className="mt-4"
                 >
-                  Mostrar todos los productos
+                   Ver todo el catálogo de neumáticos
                 </Button>
               </div>
             ) : (
