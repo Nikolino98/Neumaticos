@@ -101,9 +101,11 @@ const Index = () => {
   return (
     <CartProvider>
        <SEOHead 
-        title="Ruedas al Instante - Neumáticos Online | Mejores Precios y Marcas"
-        description="🚗 Compra neumáticos online con envío gratis. Marcas: Michelin, Bridgestone, Pirelli, Continental. ✅ Ofertas especiales ✅ Garantía ✅ Instalación disponible"
+        title="Cardelli Neumáticos | Mejores Precios y Marcas"
+        description="🚗 Compra los mejores neumáticos. Marcas: Michelin, Bridgestone, Pirelli, Continental. ✅ Ofertas especiales"
+
         keywords="neumáticos baratos, llantas online, Michelin precio, Bridgestone ofertas, neumáticos auto, neumáticos moto, neumáticos camión, comprar ruedas online, neumáticos con instalación"
+
         canonical="https://cardellineumaticos.netlify.app/"
       />
       
