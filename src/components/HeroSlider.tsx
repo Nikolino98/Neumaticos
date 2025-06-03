@@ -73,7 +73,6 @@ export const HeroSlider = () => {
             aria-label={slide.alt}
           >
             <div className="container mx-auto px-4 flex justify-center items-center h-screen">
-              // Cambiar los h1 por h2 en los slides
               <div className="inline-block bg-black/60 text-white p-8 rounded-2xl backdrop-blur-md text-center shadow-2xl space-y-4 max-w-3xl">
                 <h2 className="text-4xl md:text-6xl font-extrabold animate-fade-in leading-tight text-blue-300">
                   {slide.title}

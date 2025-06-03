@@ -37,7 +37,6 @@ export const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            // Reemplazar los botones de navegación con enlaces reales
             <nav className="hidden md:flex items-center space-x-6">
               <a 
                 href="/" 

@@ -159,10 +159,8 @@ const Index = () => {
         {/* Features Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-bold text-center mb-12">Venta de Neumáticos en Córdoba para Autos, Camionetas y Camiones</h1>
+            <h1 className="text-3xl font-bold text-center mb-12">¿Por qué elegir Cardelli Neumaticos?</h1>
             <p className="text-lg text-center mb-8 max-w-4xl mx-auto">En Cardelli Neumáticos encontrarás la mejor selección de neumáticos para autos, camionetas, camiones y maquinaria agrícola con los mejores precios de Argentina.</p>
-            
-            <h2 className="text-3xl font-bold text-center mb-12">¿Por qué elegir Cardelli Neumaticos?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center">
@@ -202,7 +200,7 @@ const Index = () => {
                 </p>
                 <p className="text-lg text-gray-700">
                   ¡Solo por tiempo limitado! Ahorra hasta un 40% en 
-                  neumáticos premium
+                  neumáticos.
                 </p>
               </div>
               
@@ -232,29 +230,9 @@ const Index = () => {
               <h3 className="text-xl text-gray-600 mb-4">
                 Encuentra el neumático perfecto para tu vehículo
               </h3>
-              <p className="text-lg text-gray-700">
-                Más de {products.length} neumáticos disponibles para Autos, Camionetas y mas
-              </p>
             </div>
             
-            {/* Breadcrumbs */}
-            <nav className="bg-gray-100 py-2">
-              <div className="container mx-auto px-4">
-                <ol className="flex text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
-                  <li className="flex items-center" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                    <a href="/" itemProp="item" className="text-blue-600 hover:text-blue-800">
-                      <span itemProp="name">Inicio</span>
-                    </a>
-                    <meta itemProp="position" content="1" />
-                    <span className="mx-2">/</span>
-                  </li>
-                  <li className="flex items-center" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                    <span itemProp="name">Catálogo de Neumáticos</span>
-                    <meta itemProp="position" content="2" />
-                  </li>
-                </ol>
-              </div>
-            </nav>
+            
             
             {/* Filter Section */}
             <div id="busqueda" className="mb-8">
