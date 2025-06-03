@@ -104,15 +104,15 @@ const Index = () => {
   return (
     <CartProvider>
        <SEOHead 
-        title="Venta de Neumáticos en Córdoba | Neumáticos para Autos, Camionetas y Camiones | Cardelli"
-        description="Tienda especializada en venta de neumáticos en Córdoba para autos, camionetas, camiones y maquinaria agrícola. Marcas premium como Michelin, Bridgestone y Pirelli con los mejores precios y garantía."
-        keywords="venta de neumáticos en Córdoba, neumáticos para autos en Argentina, neumáticos para camionetas, neumáticos agrícolas, neumáticos para camiones, ofertas de neumáticos, comprar neumáticos online, neumáticos baratos en Córdoba, neumáticos para maquinaria agrícola, neumáticos para tractores"
+        title="Cardelli Neumáticos | Neumáticos para Autos, Camionetas y Camiones"
+        description="Cardelli Neumáticos venta de neumáticos en Córdoba para autos, camionetas, camiones y maquinaria agrícola. Marcas premium como Michelin, Bridgestone y Pirelli con los mejores precios y garantía."
+        keywords="Cardelli Neumáticos, cardelli neumaticos, venta de neumáticos en Córdoba, neumáticos para autos en Argentina, neumáticos para camionetas, neumáticos agrícolas, neumáticos para camiones, ofertas de neumáticos, comprar neumáticos online, neumáticos baratos en Córdoba, neumáticos para maquinaria agrícola, neumáticos para tractores"
         canonical="https://cardellineumaticos.netlify.app/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Store",
           "name": "Cardelli Neumáticos",
-          "description": "Tienda especializada en venta de neumáticos en Córdoba para todo tipo de vehículos",
+          "description": "Cardelli Neumáticos venta de neumáticos en Córdoba para todo tipo de vehículos",
           "url": "https://cardellineumaticos.netlify.app/",
           "logo": "https://cardellineumaticos.netlify.app/images/Logo.png",
           "telephone": "+54 351 771 6373",
