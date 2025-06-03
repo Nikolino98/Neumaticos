@@ -94,22 +94,22 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-400">+54 351 771 6373</span>
+                <span className="text-gray-400">+54 3572-525119</span>
               </div>
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400" />
                 <span className="text-gray-400">info@neumaticos.com</span>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-400">Córdoba, Argentina</span>
+                <span className="text-gray-400">Belgrano 669, Río Segundo, Córdoba</span>
               </div>
             </div>
 
             {/* Redes sociales */}
             <div className="flex space-x-4 pt-4">
               <a
-                href="https://wa.me/5493517716373"
+                href="https://wa.me/5493572525119"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors"
@@ -117,7 +117,7 @@ export const Footer = () => {
                 <MessageCircle className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/cardellineumaticos/"
                 className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
