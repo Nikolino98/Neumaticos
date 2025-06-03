@@ -42,7 +42,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         canonicalLink.setAttribute('rel', 'canonical');
         document.head.appendChild(canonicalLink);
       }
-      canonicalLink.setAttribute('href', canonical);
+      // No actualizar si ya existe una etiqueta canónica en el HTML estático
+      if (!document.querySelector('link[rel="canonical"][data-static="true"]')) {
+        canonicalLink.setAttribute('href', canonical);
+      }
     }
     
     // Update Open Graph tags

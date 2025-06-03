@@ -159,7 +159,10 @@ const Index = () => {
         {/* Features Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl font-bold text-center mb-12">¿Por qué elegir Cardelli Neumaticos?</h1>
+            <h1 className="text-4xl font-bold text-center mb-12">Venta de Neumáticos en Córdoba para Autos, Camionetas y Camiones</h1>
+            <p className="text-lg text-center mb-8 max-w-4xl mx-auto">En Cardelli Neumáticos encontrarás la mejor selección de neumáticos para autos, camionetas, camiones y maquinaria agrícola con los mejores precios de Argentina.</p>
+            
+            <h2 className="text-3xl font-bold text-center mb-12">¿Por qué elegir Cardelli Neumaticos?</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
@@ -193,15 +196,16 @@ const Index = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   🔥 Ofertas Especiales en Neumáticos
                 </h2>
-                <h3 className="text-xl text-gray-600 mb-4">
+                <p className="text-xl text-gray-600 mb-4">
                   Aprovecha estos descuentos exclusivos en las mejores marcas
-                </h3>
+                </p>
                 <p className="text-lg text-gray-700">
                   ¡Solo por tiempo limitado! Ahorra hasta un 40% en 
                   neumáticos premium
                 </p>
               </div>
               
+              {/* <!-- Resto del contenido sin cambios --> */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {promotionProducts.slice(0, 6).map((product) => (
                   <ProductCard key={product.id} product={product} />
@@ -231,6 +235,25 @@ const Index = () => {
                 Más de {products.length} neumáticos disponibles para Autos, Camionetas y mas
               </p>
             </div>
+            
+            {/* Breadcrumbs */}
+            <nav className="bg-gray-100 py-2">
+              <div className="container mx-auto px-4">
+                <ol className="flex text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
+                  <li className="flex items-center" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                    <a href="/" itemProp="item" className="text-blue-600 hover:text-blue-800">
+                      <span itemProp="name">Inicio</span>
+                    </a>
+                    <meta itemProp="position" content="1" />
+                    <span className="mx-2">/</span>
+                  </li>
+                  <li className="flex items-center" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                    <span itemProp="name">Catálogo de Neumáticos</span>
+                    <meta itemProp="position" content="2" />
+                  </li>
+                </ol>
+              </div>
+            </nav>
             
             {/* Filter Section */}
             <div id="busqueda" className="mb-8">
@@ -326,3 +349,74 @@ const Index = () => {
 };
 
 export default Index;
+// Eliminar todo el código después de export default Index;
+// Eliminar estas líneas (líneas 390-420 aproximadamente)
+// {/* Breadcrumbs */}
+// <nav className="bg-gray-100 py-2">
+//   <div className="container mx-auto px-4">
+//     <ol className="flex text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
+//       <li className="flex items-center" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+//         <a href="/" itemProp="item" className="text-blue-600 hover:text-blue-800">
+//           <span itemProp="name">Inicio</span>
+//         </a>
+//         <meta itemProp="position" content="1" />
+//         <span className="mx-2">/</span>
+//       </li>
+//       <li className="flex items-center" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+//         <span itemProp="name">Catálogo de Neumáticos</span>
+//         <meta itemProp="position" content="2" />
+//       </li>
+//     </ol>
+//   </div>
+// </nav>
+// {/* Filter Section */}
+// <div id="busqueda" className="mb-8">
+//   
+//   <ProductFilter
+//     onFilterChange={handleFilterChange}
+//     isOpen={isFilterOpen}
+//     onToggle={() => setIsFilterOpen(!isFilterOpen)}
+//   />
+// </div>
+
+// {/* Products Grid */}
+// {loading ? (
+//   <div className="text-center py-12">
+//     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+//     <p className="mt-4 text-gray-600">Cargando catálogo de neumáticos...</p>
+//   </div>
+// ) : filteredProducts.length === 0 ? (
+//   <div className="text-center py-12">
+//     <h5 className="text-lg font-medium text-gray-700 mb-2">
+//       No se encontraron neumáticos con los filtros seleccionados
+//     </h5>
+//     <p className="text-gray-600 mb-4">
+//       Prueba con otros filtros o explora nuestras 
+//       <a href="#promociones" className="text-red-600 underline ml-1">ofertas especiales</a>
+//     </p>
+//     <Button 
+//       variant="outline" 
+//       onClick={() => {
+//         setFilteredProducts(products);
+//         setIsFilterOpen(false);
+//       }}
+//       className="mt-4"
+//     >
+//       Ver todo el catálogo de neumáticos
+//     </Button>
+//   </div>
+// ) : (
+//   <>
+//     <div className="mb-6">
+//       <h4 className="text-xl font-semibold">
+//         Resultados de búsqueda ({filteredProducts.length} productos)
+//       </h4>
+//       
+//     </div>
+//     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+//       {filteredProducts.map((product) => (
+//         <ProductCard key={product.id} product={product} />
+//       ))}
+//     </div>
+//   </>
+// )}

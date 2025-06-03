@@ -60,7 +60,7 @@ export const HeroSlider = () => {
               : "translate-x-full"
           }`}
         >
-          // En la parte del renderizado de las imágenes:
+          {/* //En la parte del renderizado de las imágenes: */}
           <div
             className="w-full h-full bg-gradient-to-r from-red-900 to-blue-600 flex items-center"
             style={{
