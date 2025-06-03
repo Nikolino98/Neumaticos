@@ -10,11 +10,11 @@ interface SEOHeadProps {
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "Ruedas al Instante - Neumáticos y Llantas Online | Mejores Precios",
-  description = "Compra neumáticos y llantas online al mejor precio. Marcas como Michelin, Bridgestone, Pirelli. Entrega rápida y garantía. ¡Encuentra el neumático perfecto para tu vehículo!",
-  keywords = "neumáticos, llantas, ruedas, Michelin, Bridgestone, Pirelli, Continental, auto, moto, camión, ofertas neumáticos, comprar llantas online",
+  title = "Cardelli Neumaticos - Neumáticos Online | Mejores Precios en Argentina 🚗",
+  description = "🏆 Tienda #1 de neumáticos. Marcas premium: Michelin, Bridgestone, Pirelli, Continental. ✅ Garantía total",
+  keywords = "neumáticos baratos Argentina, llantas online cordoba, Michelin precio ofertas, Bridgestone descuentos, neumáticos auto baratos, neumáticos camión Cordoba, comprar ruedas online, neumáticos con instalación domicilio, ofertas neumáticos 2025",
   canonical,
-  ogImage = "https://ruedas-al-instante.com/og-image.jpg"
+  ogImage = "https://cardellineumaticos.netlify.app/"
 }) => {
   useEffect(() => {
     // Update document title
@@ -74,6 +74,56 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     if (twitterImage) {
       twitterImage.setAttribute('content', ogImage);
     }
+    // Mejor estructura for SEO
+    const addStructuredData = () => {
+      const existingScript = document.querySelector('#structured-data');
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      const script = document.createElement('script');
+      script.id = 'structured-data';
+      script.type = 'application/ld+json';
+      script.innerHTML = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": title,
+        "description": description,
+        "url": canonical || window.location.href,
+        "mainEntity": {
+          "@type": "Store",
+          "name": "Cardelli Neumaticos",
+          "description": "Tienda online especializada en neumáticos mejores marcas",
+          "url": "https://cardellineumaticos.netlify.app/",
+          "priceRange": "ARS",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Catálogo de Neumáticos",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Neumáticos Michelin",
+                  "brand": "Michelin"
+                }
+              },
+              {
+                "@type": "Offer", 
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Neumáticos Bridgestone",
+                  "brand": "Bridgestone"
+                }
+              }
+            ]
+          }
+        }
+      });
+      document.head.appendChild(script);
+    };
+
+    addStructuredData();
   }, [title, description, keywords, canonical, ogImage]);
 
   return null;

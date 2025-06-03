@@ -336,9 +336,9 @@ const AdminPanel = () => {
     return (
       <>
         <SEOHead 
-          title="Panel de Administración - Ruedas al Instante | Gestión de Neumáticos"
-          description="Panel de administración para gestionar el catálogo de neumáticos y llantas online. Control de inventario, precios y promociones."
-          canonical="https://ruedas-al-instante.com/admin"
+          title="Panel de Administración - Cardelli Neumaticos | Gestión de Neumáticos"
+          description="Panel de administración para gestionar el catálogo de neumáticos. Control de inventario, precios y promociones."
+          canonical="https://cardellineumaticos.netlify.app/"
         />
         <div className="min-h-screen flex items-center justify-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
@@ -351,9 +351,9 @@ const AdminPanel = () => {
     return (
       <>
         <SEOHead 
-          title="Acceso Administrativo - Ruedas al Instante | Login Panel Admin"
-          description="Acceso al panel de administración de Ruedas al Instante para gestión de inventario de neumáticos y llantas."
-          canonical="https://ruedas-al-instante.com/admin"
+          title="Acceso Administrativo - Cardelli Neumaticos | Login Panel Admin"
+          description="Acceso al panel de administración de Cardelli Neumaticos para gestión de inventario de neumáticos."
+          canonical="https://cardellineumaticos.netlify.app/"
         />
         <LoginForm onSignIn={signIn} />
       </>
@@ -401,8 +401,8 @@ const AdminPanel = () => {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Panel de Administración - Ruedas al Instante</h1>
-                <p className="text-sm text-gray-600 mt-1">Gestión completa de neumáticos y llantas online</p>
+                <h1 className="text-2xl font-bold text-gray-900">Panel de Administración - Cardelli Neumaticos</h1>
+                <p className="text-sm text-gray-600 mt-1">Gestión completa de tus neumáticos</p>
               </div>
               <div className="flex items-center space-x-4">
                 <span className="text-sm text-gray-600">Hola, {user.email}</span>
@@ -419,37 +419,6 @@ const AdminPanel = () => {
           </div>
         </header>
 
-        {/* Navigation Links */}
-        <nav className="bg-blue-50 border-b">
-          <div className="container mx-auto px-4 py-3">
-            <div className="flex items-center space-x-6">
-              <a 
-                href="/" 
-                className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-                title="Ir a la tienda online de neumáticos"
-              >
-                <Home className="h-4 w-4 mr-1" />
-                Tienda Principal
-              </a>
-              <a 
-                href="/#productos" 
-                className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-                title="Ver catálogo completo de neumáticos"
-              >
-                <ShoppingCart className="h-4 w-4 mr-1" />
-                Catálogo de Productos
-              </a>
-              <a 
-                href="/#promociones" 
-                className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-                title="Ofertas especiales en neumáticos"
-              >
-                <Tags className="h-4 w-4 mr-1" />
-                Promociones Activas
-              </a>
-            </div>
-          </div>
-        </nav>
 
         <div className="container mx-auto px-4 py-8">
           {/* Main Section */}
@@ -457,7 +426,7 @@ const AdminPanel = () => {
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Gestión de Inventario de Neumáticos</h2>
             <p className="text-gray-600 mb-4">
               Administra el catálogo completo de neumáticos para autos, camionetas, camiones y vehículos agrícolas. 
-              Controla precios, promociones y stock de todas las marcas premium.
+              Controla precios, promociones y stock de todas las marcas.
             </p>
             
             {/* Quick Stats */}
@@ -815,51 +784,12 @@ const AdminPanel = () => {
               <div className="text-center py-12">
                 <h5 className="text-lg font-medium text-gray-700 mb-2">No se encontraron productos</h5>
                 <p className="text-gray-600">No hay neumáticos que coincidan con los filtros aplicados.</p>
-                <div className="mt-4 space-x-4">
-                  <a 
-                    href="/#productos" 
-                    className="text-blue-600 hover:text-blue-800 underline"
-                  >
-                    Ver catálogo público
-                  </a>
-                  <a 
-                    href="/#promociones" 
-                    className="text-red-600 hover:text-red-800 underline"
-                  >
-                    Ver promociones activas
-                  </a>
-                </div>
+                
               </div>
             )}
           </section>
 
-          {/* Footer Links */}
-          <footer className="mt-12 pt-8 border-t">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div>
-                <h6 className="font-medium mb-3">Enlaces Importantes</h6>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/" className="text-blue-600 hover:text-blue-800">Inicio - Ruedas al Instante</a></li>
-                  <li><a href="/#productos" className="text-blue-600 hover:text-blue-800">Catálogo de Neumáticos</a></li>
-                  <li><a href="/#promociones" className="text-blue-600 hover:text-blue-800">Ofertas Especiales</a></li>
-                </ul>
-              </div>
-              <div>
-                <h6 className="font-medium mb-3">Categorías de Productos</h6>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="/#busqueda" className="text-blue-600 hover:text-blue-800">Neumáticos para Auto</a></li>
-                  <li><a href="/#busqueda" className="text-blue-600 hover:text-blue-800">Neumáticos para Camioneta</a></li>
-                  <li><a href="/#busqueda" className="text-blue-600 hover:text-blue-800">Neumáticos para Camión</a></li>
-                </ul>
-              </div>
-              <div>
-                <h6 className="font-medium mb-3">Gestión Administrativa</h6>
-                <p className="text-sm text-gray-600">
-                  Panel completo para administrar el inventario de neumáticos online de Ruedas al Instante.
-                </p>
-              </div>
-            </div>
-          </footer>
+         
         </div>
       </div>
     </>
