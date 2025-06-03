@@ -104,7 +104,7 @@ const Index = () => {
   return (
     <CartProvider>
        <SEOHead 
-        title="Cardelli Neumaticos - Neumáticos y Llantas Online | Mejores Precios en España"
+        title="Cardelli Neumaticos - Neumáticos Online | Mejores Precios en Argentina"
 
         description="🏆 Tienda #1 de neumáticos online en Argentina. Marcas premium: Michelin, Bridgestone, Pirelli, Continental. ✅ Garantía total"
 
