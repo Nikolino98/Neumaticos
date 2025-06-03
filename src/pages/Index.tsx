@@ -163,6 +163,7 @@ const Index = () => {
             <p className="text-lg text-center mb-8 max-w-4xl mx-auto">En Cardelli Neumáticos encontrarás la mejor selección de neumáticos para autos, camionetas, camiones y maquinaria agrícola con los mejores precios de Argentina.</p>
             
             <h2 className="text-3xl font-bold text-center mb-12">¿Por qué elegir Cardelli Neumaticos?</h2>
+            
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />

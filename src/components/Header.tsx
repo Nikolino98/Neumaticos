@@ -37,31 +37,32 @@ export const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
+            // Reemplazar los botones de navegación con enlaces reales
             <nav className="hidden md:flex items-center space-x-6">
-              <button 
-                onClick={() => scrollToSection('inicio')} 
+              <a 
+                href="/" 
                 className="hover:text-blue-200 transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-200 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
               >
                 Inicio
-              </button>
-              <button 
-                onClick={() => scrollToSection('productos')} 
+              </a>
+              <a 
+                href="/#productos" 
                 className="hover:text-blue-200 transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-200 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
               >
                 Productos
-              </button>
-              <button 
-                onClick={() => scrollToSection('promociones')} 
+              </a>
+              <a 
+                href="/#promociones" 
                 className="hover:text-blue-200 transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-200 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
               >
                 Promociones
-              </button>
-              <button 
-                onClick={() => scrollToSection('contacto')} 
+              </a>
+              <a 
+                href="/#contacto" 
                 className="hover:text-blue-200 transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-200 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
               >
                 Contacto
-              </button>
+              </a>
             </nav>
 
             {/* Cart Button */}

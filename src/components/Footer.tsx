@@ -31,25 +31,25 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold">Enlaces Rápidos</h3>
             <nav className="space-y-2">
               <a
-                href="#inicio"
+                href="/"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Inicio
               </a>
               <a
-                href="#productos"
+                href="/#productos"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Productos
               </a>
               <a
-                href="#promociones"
+                href="/#promociones"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Promociones
               </a>
               <a
-                href="#busqueda"
+                href="/#busqueda"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Búsqueda
@@ -62,25 +62,25 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold">Categorías de Neumáticos</h3>
             <nav className="space-y-2">
               <a
-                href="/neumáticos-para-autos"
+                href="/productos/autos"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Neumáticos para Autos en Córdoba
               </a>
               <a
-                href="/neumáticos-para-camionetas"
+                href="/productos/camionetas"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Neumáticos para Camionetas
               </a>
               <a
-                href="/neumáticos-para-camiones"
+                href="/productos/camiones"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Neumáticos para Camiones
               </a>
               <a
-                href="/neumáticos-agrícolas"
+                href="/productos/agricolas"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Neumáticos Agrícolas y para Tractores
