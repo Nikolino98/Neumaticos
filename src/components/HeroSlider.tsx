@@ -10,21 +10,24 @@ import logo from '/images/Logo.png'
 const slides = [
   {
     id: 1,
-    title: "Neumáticos de Alta Calidad",
-    subtitle: "Para tu auto, camioneta o camión",
+    title: "Neumáticos de Alta Calidad en Córdoba",
+    subtitle: "Para tu auto, camioneta o camión con los mejores precios",
     image: slider1,
+    alt: "Neumáticos de alta calidad para vehículos en Córdoba"
   },
   {
     id: 2,
-    title: "Ofertas Especiales",
-    subtitle: "Hasta 40% de descuento",
+    title: "Ofertas Especiales en Neumáticos",
+    subtitle: "Hasta 40% de descuento en marcas premium",
     image: slider2,
+    alt: "Ofertas y descuentos en neumáticos en Córdoba"
   },
   {
     id: 3,
-    title: "Neumáticos Agrícolas",
-    subtitle: "Para maquinaria pesada",
+    title: "Neumáticos Agrícolas y para Maquinaria Pesada",
+    subtitle: "Soluciones especializadas para el sector agropecuario",
     image: slider3,
+    alt: "Neumáticos agrícolas y para maquinaria pesada en Córdoba"
   }
 ];
 
@@ -57,6 +60,7 @@ export const HeroSlider = () => {
               : "translate-x-full"
           }`}
         >
+          // En la parte del renderizado de las imágenes:
           <div
             className="w-full h-full bg-gradient-to-r from-red-900 to-blue-600 flex items-center"
             style={{
@@ -65,6 +69,8 @@ export const HeroSlider = () => {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
+            role="img"
+            aria-label={slide.alt}
           >
             <div className="container mx-auto px-4 flex justify-center items-center h-screen">
               <div className="inline-block bg-black/60 text-white p-8 rounded-2xl backdrop-blur-md text-center shadow-2xl space-y-4 max-w-3xl">

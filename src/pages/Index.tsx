@@ -104,13 +104,47 @@ const Index = () => {
   return (
     <CartProvider>
        <SEOHead 
-        title="Cardelli Neumaticos - Neumáticos Online | Mejores Precios en Argentina"
-
-        description="🏆 Tienda #1 de neumáticos online en Argentina. Marcas premium: Michelin, Bridgestone, Pirelli, Continental. ✅ Garantía total"
-
-        keywords="neumáticos baratos Argentina, llantas online Cordoba, Michelin precio, Bridgestone ofertas, neumáticos auto Cordoba, neumáticos, neumáticos camión Cordoba, comprar ruedas online, neumáticos con instalación"
-
+        title="Venta de Neumáticos en Córdoba | Neumáticos para Autos, Camionetas y Camiones | Cardelli"
+        description="Tienda especializada en venta de neumáticos en Córdoba para autos, camionetas, camiones y maquinaria agrícola. Marcas premium como Michelin, Bridgestone y Pirelli con los mejores precios y garantía."
+        keywords="venta de neumáticos en Córdoba, neumáticos para autos en Argentina, neumáticos para camionetas, neumáticos agrícolas, neumáticos para camiones, ofertas de neumáticos, comprar neumáticos online, neumáticos baratos en Córdoba, neumáticos para maquinaria agrícola, neumáticos para tractores"
         canonical="https://cardellineumaticos.netlify.app/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Store",
+          "name": "Cardelli Neumáticos",
+          "description": "Tienda especializada en venta de neumáticos en Córdoba para todo tipo de vehículos",
+          "url": "https://cardellineumaticos.netlify.app/",
+          "logo": "https://cardellineumaticos.netlify.app/images/Logo.png",
+          "telephone": "+54 351 771 6373",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Principal 123",
+            "addressLocality": "Córdoba",
+            "addressRegion": "Córdoba",
+            "postalCode": "5000",
+            "addressCountry": "AR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-31.4201",
+            "longitude": "-64.1888"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "09:00",
+              "closes": "13:00"
+            }
+          ],
+          "priceRange": "$$$"
+        }}
       />
       
       <div className="min-h-screen bg-gray-50">

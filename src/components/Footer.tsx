@@ -59,31 +59,31 @@ export const Footer = () => {
 
           {/* Categorías */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Categorías</h3>
+            <h3 className="text-lg font-semibold">Categorías de Neumáticos</h3>
             <nav className="space-y-2">
               <a
-                href="#"
+                href="/neumáticos-para-autos"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
-                Neumáticos para Autos
+                Neumáticos para Autos en Córdoba
               </a>
               <a
-                href="#"
+                href="/neumáticos-para-camionetas"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Neumáticos para Camionetas
               </a>
               <a
-                href="#"
+                href="/neumáticos-para-camiones"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Neumáticos para Camiones
               </a>
               <a
-                href="#"
+                href="/neumáticos-agrícolas"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
-                Neumáticos Agrícolas
+                Neumáticos Agrícolas y para Tractores
               </a>
             </nav>
           </div>
@@ -145,3 +145,11 @@ export const Footer = () => {
     </footer>
   );
 };
+
+{/* Sección adicional de SEO */}
+<div className="mt-12 pt-8 border-t border-gray-700">
+  <p className="text-sm text-gray-500 text-center">
+    Cardelli Neumáticos - Venta de neumáticos en Córdoba para autos, camionetas, camiones y maquinaria agrícola. 
+    Ofrecemos las mejores marcas como Michelin, Bridgestone, Pirelli y Continental con precios competitivos y garantía total.
+  </p>
+</div>

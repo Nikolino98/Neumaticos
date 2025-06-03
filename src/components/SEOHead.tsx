@@ -7,14 +7,16 @@ interface SEOHeadProps {
   keywords?: string;
   canonical?: string;
   ogImage?: string;
+  structuredData?: object;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "Cardelli Neumaticos - Neumáticos Online | Mejores Precios en Argentina 🚗",
-  description = "🏆 Tienda #1 de neumáticos. Marcas premium: Michelin, Bridgestone, Pirelli, Continental. ✅ Garantía total",
-  keywords = "neumáticos baratos Argentina, llantas online cordoba, Michelin precio ofertas, Bridgestone descuentos, neumáticos auto baratos, neumáticos camión Cordoba, comprar ruedas online, neumáticos con instalación domicilio, ofertas neumáticos 2025",
-  canonical,
-  ogImage = "https://cardellineumaticos.netlify.app/"
+  title = "Cardelli Neumáticos - Venta de Neumáticos en Córdoba | Mejores Precios en Argentina 🚗",
+  description = "🏆 Tienda #1 de neumáticos en Córdoba. Marcas premium: Michelin, Bridgestone, Pirelli, Continental. ✅ Neumáticos para autos, camionetas, camiones y maquinaria agrícola con garantía total",
+  keywords = "neumáticos para autos en Argentina, venta de neumáticos en Córdoba, neumáticos para camionetas, neumáticos agrícolas, neumáticos para camiones, ofertas de neumáticos, comprar neumáticos online, neumáticos baratos en Córdoba, neumáticos para maquinaria agrícola, neumáticos para tractores",
+  canonical = "https://cardellineumaticos.netlify.app/",
+  ogImage = "https://cardellineumaticos.netlify.app/images/Logo.png",
+  structuredData
 }) => {
   useEffect(() => {
     // Update document title
@@ -49,82 +51,29 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       ogTitle.setAttribute('content', title);
     }
     
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute('content', description);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute('content', description);
     }
     
-    const ogImageMeta = document.querySelector('meta[property="og:image"]');
-    if (ogImageMeta) {
-      ogImageMeta.setAttribute('content', ogImage);
+    const ogImg = document.querySelector('meta[property="og:image"]');
+    if (ogImg) {
+      ogImg.setAttribute('content', ogImage);
     }
     
-    // Update Twitter tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute('content', title);
-    }
-    
-    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDescription) {
-      twitterDescription.setAttribute('content', description);
-    }
-    
-    const twitterImage = document.querySelector('meta[name="twitter:image"]');
-    if (twitterImage) {
-      twitterImage.setAttribute('content', ogImage);
-    }
-    // Mejor estructura for SEO
-    const addStructuredData = () => {
-      const existingScript = document.querySelector('#structured-data');
-      if (existingScript) {
-        existingScript.remove();
+    // Add structured data if provided
+    if (structuredData) {
+      let scriptTag = document.querySelector('#structured-data-script');
+      if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.setAttribute('id', 'structured-data-script');
+        scriptTag.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(scriptTag);
       }
-
-      const script = document.createElement('script');
-      script.id = 'structured-data';
-      script.type = 'application/ld+json';
-      script.innerHTML = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": title,
-        "description": description,
-        "url": canonical || window.location.href,
-        "mainEntity": {
-          "@type": "Store",
-          "name": "Cardelli Neumaticos",
-          "description": "Tienda online especializada en neumáticos mejores marcas",
-          "url": "https://cardellineumaticos.netlify.app/",
-          "priceRange": "ARS",
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Catálogo de Neumáticos",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Product",
-                  "name": "Neumáticos Michelin",
-                  "brand": "Michelin"
-                }
-              },
-              {
-                "@type": "Offer", 
-                "itemOffered": {
-                  "@type": "Product",
-                  "name": "Neumáticos Bridgestone",
-                  "brand": "Bridgestone"
-                }
-              }
-            ]
-          }
-        }
-      });
-      document.head.appendChild(script);
-    };
-
-    addStructuredData();
-  }, [title, description, keywords, canonical, ogImage]);
+      scriptTag.textContent = JSON.stringify(structuredData);
+    }
+    
+  }, [title, description, keywords, canonical, ogImage, structuredData]);
 
   return null;
 };
