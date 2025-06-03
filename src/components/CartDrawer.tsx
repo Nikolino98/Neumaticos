@@ -130,8 +130,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                     <span>${totalPrice.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between text-green-600">
-                    <span>Envío</span>
-                    <span>GRATIS</span>
                   </div>
                   <Separator />
                   <div className="flex justify-between items-center text-lg font-semibold">
@@ -150,7 +148,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                     onClick={() => setShowCheckout(true)}
                   >
                     <MessageCircle className="h-4 w-4 mr-2" />
-                    Enviar Consulta por WhatsApp
+                    Completar Datos Personales
                   </Button>
                   
                   <p className="text-xs text-center text-gray-500">
@@ -161,8 +159,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                 {/* Trust Badges */}
                 <div className="grid grid-cols-3 gap-2 text-xs text-center text-gray-500 pt-2 border-t">
                   <div>
-                    <span className="block">✅ Envío</span>
-                    <span>GRATIS</span>
+                    <span className="block">✅ Confianza</span>
                   </div>
                   <div>
                     <span className="block">🛡️ Garantía</span>
